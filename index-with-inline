@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Kyle Hubbard • Coaching for principled, fearless living</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="Coaching with Kyle Hubbard — integrating Buddhist training, Circling, and playful depth work for wholehearted, principled living."
+  />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Lora:wght@400;500&display=swap"
+    rel="stylesheet"
+  >
+</head>
+<body style="margin:0;min-height:100vh;font-family:'Lora',system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',serif;background-color:#f7f1e6;color:#5f4537;-webkit-font-smoothing:antialiased;">
+
+  <!-- Outer background / frame -->
+  <div style="padding:12px 0 24px 0;">
+    <!-- Inner card -->
+    <main style="width:100%;max-width:720px;margin:0 auto;border:2px solid #e1d5c6;background-color:#fdf8ef;box-shadow:0 18px 40px rgba(0,0,0,0.06);padding:20px 18px 28px;box-sizing:border-box;">
+
+      <!-- HEADER -->
+      <header style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:14px;margin-bottom:26px;">
+        <div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:clamp(24px,3.4vw,30px);letter-spacing:0.07em;text-transform:uppercase;font-weight:600;">
+            Kyle Hubbard
+          </div>
+          <div style="font-size:13px;color:#8d7564;margin-top:2px;">
+            mindfulness • relationships • principled living
+          </div>
+        </div>
+        <nav style="display:flex;flex-wrap:wrap;gap:12px;font-size:14px;color:#8d7564;">
+          <a href="#about" style="color:inherit;text-decoration:none;padding-bottom:3px;border-bottom:1px solid transparent;">About</a>
+          <a href="#sessions" style="color:inherit;text-decoration:none;padding-bottom:3px;border-bottom:1px solid transparent;">Sessions</a>
+          <a href="#pricing" style="color:inherit;text-decoration:none;padding-bottom:3px;border-bottom:1px solid transparent;">Pricing</a>
+          <a href="#contact" style="color:inherit;text-decoration:none;padding-bottom:3px;border-bottom:1px solid transparent;">Contact</a>
+        </nav>
+      </header>
+
+      <!-- HERO -->
+      <section aria-labelledby="hero-heading" style="border-radius:18px;border:1px solid #e1d5c6;background:linear-gradient(120deg,#fcf5ea,#f5ecdf);padding:20px 18px 22px 18px;margin-bottom:28px;box-sizing:border-box;">
+        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:18px;">
+          <!-- Hero text -->
+          <div style="flex:1 1 260px;min-width:0;">
+            <h1 id="hero-heading" style="font-family:'Cormorant Garamond','Times New Roman',serif;font-size:clamp(26px,4.6vw,34px);line-height:1.15;letter-spacing:0.02em;margin:0 0 10px 0;">
+              Coaching for principled, fearless living
+            </h1>
+            <p style="font-size:16px;line-height:1.6;color:#8d7564;margin:0 0 14px 0;">
+              Drawing from years in Buddhist monasteries, Circling, and deep relational study,
+              I offer one-on-one sessions for people ready to meet life.
+            </p>
+            <div style="font-size:15px;color:#8d7564;margin:0 0 0 8px;">
+              <div style="margin:4px 0;"><span style="color:#b0673c;margin-right:10px;">∿</span>beginner mindfulness</div>
+              <div style="margin:4px 0;"><span style="color:#b0673c;margin-right:10px;">∿</span>advanced meditation</div>
+              <div style="margin:4px 0;"><span style="color:#b0673c;margin-right:10px;">∿</span>emotional &amp; physical wellbeing</div>
+              <div style="margin:4px 0;"><span style="color:#b0673c;margin-right:10px;">∿</span>intimacy &amp; relationships</div>
+              <div style="margin:4px 0;"><span style="color:#b0673c;margin-right:10px;">∿</span>principled, resilient living</div>
+            </div>
+          </div>
+
+          <!-- Hero photo -->
+          <div style="flex:0 0 260px;max-width:260px;min-width:200px;margin-left:auto;margin-right:auto;">
+            <img
+              src="https://kyhu8.wordpress.com/wp-content/uploads/2025/11/img_7130.jpeg"
+              alt="Headshot of Kyle Hubbard"
+              style="display:block;width:100%;height:auto;border-radius:22px;border:1px solid #e1d5c6;box-shadow:0 14px 32px rgba(0,0,0,0.18);object-fit:cover;"
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section id="about" aria-labelledby="about-heading" style="border-radius:7px;border:1px solid #e1d5c6;background-color:#fdf7ee;padding:22px 18px 18px 18px;margin-top:22px;box-sizing:border-box;">
+        <h3 id="about-heading" style="font-family:'Cormorant Garamond','Times New Roman',serif;font-size:20px;margin:0 0 4px 0;">
+          Training &amp; roots
+        </h3>
+        <p style="font-size:13px;color:#8d7564;margin:0 0 10px 0;">
+          Why I’m doing this, and what has shaped the way I work.
+        </p>
+        <div style="display:flex;flex-wrap:wrap;gap:18px;margin-top:6px;">
+          <div style="flex:1 1 260px;min-width:0;">
+            <p style="font-size:15px;line-height:1.7;margin:0 0 7px 0;">
+              For the last six years, I’ve been full-time devoted to training in spiritual,
+              therapeutic, and relational practices.
+            </p>
+            <p style="font-size:15px;line-height:1.7;margin:0 0 7px 0;">
+              Four of those years were spent living in multiple Buddhist monasteries —
+              a year and a half of which on silent meditation retreat, under the steady guidance
+              of skilled teachers.
+            </p>
+            <p style="font-size:15px;line-height:1.7;margin:0;">
+              Another central practice has been <strong>Circling</strong>, which cultivates trust and intimacy
+              in every relationship, helps us navigate charged moments with steadiness,
+              and invites a way of living that is more truthful, courageous, and natural.
+            </p>
+          </div>
+          <div style="flex:1 1 260px;min-width:0;">
+            <p style="font-size:15px;line-height:1.7;margin:0 0 7px 0;">
+              I consider myself supremely lucky. Still, it’s not just luck that afforded me this depth of training.
+              Ingenuity, effort, and yes, unearned privilege all played a part — but the single greatest
+              enabling factor has been <strong>generosity</strong>.
+            </p>
+            <p style="font-size:15px;line-height:1.7;margin:0 0 7px 0;">
+              I’ve received more than I can ever recount from teachers, monasteries, friends, foundations,
+              and a loving, loyal family. As I conclude this season of intensive training,
+              I’m committed to keeping generosity at the basis of my livelihood.
+            </p>
+            <p style="font-size:15px;line-height:1.7;margin:0;">
+              This coaching practice is one way of paying that forward: sharing everything I’ve learned
+              with anyone who feels they might benefit.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SESSIONS -->
+      <section id="sessions" aria-labelledby="sessions-heading" style="border-radius:7px;border:1px solid #e1d5c6;background-color:#fdf7ee;padding:22px 18px 18px 18px;margin-top:22px;box-sizing:border-box;">
+        <h3 id="sessions-heading" style="font-family:'Cormorant Garamond','Times New Roman',serif;font-size:20px;margin:0 0 4px 0;">
+          What a session looks like
+        </h3>
+        <p style="font-size:13px;color:#8d7564;margin:0 0 10px 0;">
+          One hour of undivided attention — shaped around what’s most alive for you.
+        </p>
+        <div style="display:flex;flex-wrap:wrap;gap:18px;margin-top:6px;">
+          <div style="flex:1 1 260px;min-width:0;">
+            <p style="font-size:15px;line-height:1.7;margin:0 0 7px 0;">
+              A session is one hour where my attention is fully with you. Within that space, either:
+            </p>
+            <ul style="font-size:15px;line-height:1.6;margin:0 0 7px 20px;padding:0;">
+              <li style="margin:3px 0;">You set the agenda,</li>
+              <li style="margin:3px 0;">we figure it out together, or</li>
+              <li style="margin:3px 0;">I take the lead based on what I sense would serve.</li>
+            </ul>
+            <p style="font-size:15px;line-height:1.7;margin:0 0 7px 0;">
+              We might curate a <strong>meditation curriculum</strong> based on your goals, with regular check-ins
+              and guided meditations to keep momentum.
+            </p>
+            <p style="font-size:15px;line-height:1.7;margin:0;">
+              I can witness you without judgment as you navigate emotions and speak to life’s challenges,
+              offering gentle reflections, reframes, nudges, and — only rarely and with consent — advice.
+            </p>
+          </div>
+          <div style="flex:1 1 260px;min-width:0;">
+            <p style="font-size:15px;line-height:1.7;margin:0 0 7px 0;">
+              I’ve discovered that play is often half the medicine. So if what’s needed is to bop around our
+              rooms and babble like banshees, or launch into a howling recital of Bohemian Rhapsody …
+              I’m here for it.
+            </p>
+            <p style="font-size:15px;line-height:1.7;margin:0;">
+              We can explore such themes as: embodiment, boundaries, control vs. surrender, masculine–feminine
+              dynamics, making wise commitments, giving and receiving feedback skillfully, reclaiming anger and
+              wielding it cleanly, how to navigate manipulative relationships, nervous system regulation,
+              and using the breath to cultivate the mind.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- PRICING -->
+      <section id="pricing" aria-labelledby="pricing-heading" style="border-radius:7px;border:1px solid #e1d5c6;background-color:#fdf7ee;padding:22px 18px 18px 18px;margin-top:22px;box-sizing:border-box;">
+        <h3 id="pricing-heading" style="font-family:'Cormorant Garamond','Times New Roman',serif;font-size:20px;margin:0 0 4px 0;">
+          Donation-based pricing
+        </h3>
+        <p style="font-size:13px;color:#8d7564;margin:0 0 10px 0;">
+          Generosity at the center — not as an afterthought.
+        </p>
+        <div style="display:flex;flex-wrap:wrap;gap:18px;margin-top:6px;">
+          <div style="flex:1 1 260px;min-width:0;">
+            <p style="font-size:15px;line-height:1.7;margin:0 0 7px 0;">
+              While the market suggests I could charge a few hundred dollars per session,
+              I’m offering them instead <strong>by donation</strong> to anyone who feels they might benefit.
+            </p>
+            <p style="font-size:15px;line-height:1.7;margin:0 0 7px 0;">
+              This means that after our session you could send me a single dollar and I would rejoice.
+              Truly — you could send me $500 and I wouldn’t hold a single grudge against you.
+            </p>
+            <p style="font-size:15px;line-height:1.7;margin:0 0 7px 0;">
+              Whatever you offer enables me to live a simple life and:
+            </p>
+            <ul style="font-size:15px;line-height:1.6;margin:0 0 0 18px;padding:0;">
+              <li style="margin:3px 0;">freely coach others,</li>
+              <li style="margin:3px 0;">write with more regularity,</li>
+              <li style="margin:3px 0;">support altruistic projects,</li>
+              <li style="margin:3px 0;">show up more fully for my troubled country, and</li>
+              <li style="margin:3px 0;">dance on the weekend with friends.</li>
+            </ul>
+          </div>
+          <div style="flex:1 1 260px;min-width:0;">
+            <p style="font-size:15px;line-height:1.7;margin:0 0 7px 0;">
+              If donation-based is uncomfortable, we can talk through that — sometimes money brings up a lot
+              of material, and that’s welcome here.
+            </p>
+            <p style="font-size:15px;line-height:1.7;margin:0 0 7px 0;">
+              Or we can simply set a <strong>fixed fee</strong> together that feels clear and workable
+              for both of us.
+            </p>
+            <p style="font-size:15px;line-height:1.7;margin:0;color:#8d7564;">
+              My hope is that this structure allows people with less access to resources
+              to still receive support, while those with more can help sustain the work for others.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" aria-labelledby="contact-heading" style="border-radius:7px;border:1px solid #e1d5c6;background-color:#fdf7ee;padding:22px 18px 18px 18px;margin-top:22px;box-sizing:border-box;">
+        <h3 id="contact-heading" style="font-family:'Cormorant Garamond','Times New Roman',serif;font-size:20px;margin:0 0 4px 0;">
+          Begin the conversation
+        </h3>
+        <p style="font-size:13px;color:#8d7564;margin:0 0 10px 0;">
+          A simple, honest message is enough.
+        </p>
+        <div style="display:flex;flex-wrap:wrap;gap:18px;margin-top:6px;">
+          <div style="flex:1 1 260px;min-width:0;">
+            <p style="font-size:15px;line-height:1.7;margin:0 0 7px 0;">
+              The greatest challenge now is simply finding the people who need this.
+              If something in you feels called — even quietly — you’re welcome to reach out.
+            </p>
+            <p style="font-size:15px;line-height:1.7;margin:0 0 7px 0;">
+              Share a few lines about where you’re at, what you’re longing for, and any questions you have.
+              I’ll respond with next steps and a way to schedule.
+            </p>
+          </div>
+          <div style="flex:1 1 260px;min-width:0;">
+            <div style="display:grid;grid-template-columns:auto 1fr;gap:4px 12px;font-size:13px;color:#8d7564;">
+              <div style="font-weight:500;color:#5f4537;">Email</div>
+              <div><a href="mailto:kyhu@pm.me" style="color:#b0673c;text-decoration:none;">kyhu@pm.me</a></div>
+
+              <div style="font-weight:500;color:#5f4537;">Website</div>
+              <div><a href="https://kyhu.org" target="_blank" rel="noopener" style="color:#b0673c;text-decoration:none;">kyhu.org</a></div>
+
+              <div style="font-weight:500;color:#5f4537;">Format</div>
+              <div>Online sessions (video or audio)</div>
+
+              <div style="font-weight:500;color:#5f4537;">Accessibility</div>
+              <div>Open to all backgrounds &amp; political orientations</div>
+            </div>
+            <p style="font-size:12px;color:#8d7564;margin:10px 0 0 0;border-left:2px solid rgba(176,103,60,0.12);padding-left:10px;">
+              If you believe in what I have to offer, feel free to blow the conch at the hilltop:
+              share this with anyone you suspect might benefit.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+      <p style="text-align:center;font-size:12px;color:#8d7564;margin-top:26px;margin-bottom:0;">
+        © 2025 Kyle Hubbard • This life we live is a miraculous gift.
+      </p>
+
+    </main>
+  </div>
+</body>
+</html>
