@@ -1,12 +1,32 @@
+
+
+<!-- NOTES
+
+
+
+Dana: sliding scale, 4 examples, depending on income.
+Prices subject to increase with time. 
+
+
+Coaching format: I'm available for one-off calls on an ad-hoc basis, or developing a deeper connection with meetings at a regular interval. 
+
+
+Contact form content
+
+
+-->
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Kyle Hubbard • Coaching for wholehearted living</title>
+  <title>Kyle Hubbard ∿ Coaching for wholehearted living</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta
     name="description"
-    content="Coaching with Kyle Hubbard — integrating Buddhist training, Circling, and playful depth work for wholehearted, principled living."
+    content="Coaching with Kyle Hubbard"
   />
 
   <!-- Fonts -->
@@ -318,8 +338,128 @@
         gap: 10px;
       }
     }
+    
+    
+    
+    .thin-underline {
+      text-decoration: underline;
+      text-decoration-thickness: 1px; /* Adjust this value for desired thinness */
+    }
+    
+    
+    
+    
+    
+        .contact-form {
+      margin-top: 16px;
+      border-top: 1px solid var(--frame);
+      padding-top: 14px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .contact-form-note {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+
+    .contact-form label {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-main);
+      display: block;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      margin-top: 4px;
+      font-family: inherit;
+      font-size: 14px;
+      padding: 8px 9px;
+      border-radius: 9px;
+      border: 1px solid var(--frame);
+      background: #fdf7ee;
+      color: var(--text-main);
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 1px var(--accent-soft);
+    }
+
+    .contact-form textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    .contact-form button {
+      margin-top: 6px;
+      align-self: flex-start;
+      padding: 8px 18px;
+      font-size: 14px;
+      border-radius: 999px;
+      border: none;
+      background: var(--accent);
+      color: #fff;
+      cursor: pointer;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+
+    .contact-form button:hover {
+      background: #a25d37;
+    }
+
+    .contact-form button:active {
+      transform: translateY(1px);
+    }
+
+    
+    
   </style>
 </head>
+
+
+
+
+
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.querySelector(".contact-form");
+  const thankYou = document.querySelector("#thank-you-inline");
+
+  form.addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    const data = new FormData(form);
+    const action = form.getAttribute("action");
+
+    const res = await fetch(action, {
+      method: "POST",
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    });
+
+    if (res.ok) {
+      form.style.display = "none";
+      thankYou.style.display = "block";
+    } else {
+      alert("Something went wrong. Please email me directly at kyhu@pm.me.");
+    }
+  });
+});
+</script>
+
+
+
+
+
 <body>
   <div class="page-frame">
     <main class="card">
@@ -338,11 +478,13 @@
       <section class="hero" aria-labelledby="hero-heading">
         <div class="hero-inner">
           <div class="hero-text">
+              
 
             <p class="hero-subtitle">
-              Drawing from years in Buddhist monasteries, practicing Circling, and intensive
-              study, I offer one-on-one sessions for people ready to meet life with greater resilience, integrity, and joy.
+              Drawing from years in Buddhist monasteries, Circling practice, and intensive
+              study, I offer one-on-one sessions for people ready to meet life with greater resilience, joy, and integrity.
             </p>
+
             <div class="hero-list">
               <div class="hero-list-item">
                 <span>∿</span> beginner mindfulness
@@ -390,13 +532,13 @@
               retreat, under the steady guidance of skilled teachers.
             </p>
             <p>
-              Another central practice has been <em>Circling</em>, which cultivates trust and intimacy in every relationship, helps one navigate charged moments with steadiness, and invites a way of living that is more truthful, courageous, and natural.
+              Another central practice has been <a class="thin-underline" style="color: #673b57" href="https://www.artemzen.com/what-is-circling/"><em>Circling</em></a>, which cultivates trust and intimacy in relationships, helps one navigate charged moments with steadiness, and invites a way of living that is more truthful, courageous, and natural.
             </p>
 
 
             <p>
               I’ve received more than I can ever recount from teachers, monasteries, friends, foundations, and a loving and loyal family along this journey.   This coaching practice is one way of paying that forward: sharing
-              everything I’ve learned with anyone who feels they might benefit.
+              everything I’ve learned with anyone who feels they might benefit, with a focus on affordability.
             </p>
           </div>
         </div>
@@ -409,41 +551,54 @@
         </p>
         <div class="two-column">
           <div>
-              <p style="margin-top:7px;">
+              <p style="margin-top:5px;margin-bottom:13px;">
                  I’m here to help you: 
               </p>
 
             <p style="margin-left: 20px;margin-right:17px;font-size: 13.4px;line-height: 1.5;margin-bottom: 7px;">
                 
-             Develop a deep trust in life and hone the ability to turn every aspect of it — no matter how challenging — into spiritual gold, into fuel for your own self-understanding. 
+             Develop a deep trust in life and hone the ability to turn every aspect of it — no matter how challenging — into fuel for your own self-understanding. 
             </p>
+            
             <p style="margin-left: 20px;margin-right:17px;font-size: 13.4px;line-height: 1.5;margin-bottom: 7px;">
-		Temper your inner-critic and tell more honest and compassionate stories about yourself and others.
+            Clarify your big Why for being alive, and bring your actions, circumstances, and commitments into alignment with that.
+            </p>
+            
+            <p style="margin-left: 20px;margin-right:17px;font-size: 13.4px;line-height: 1.5;margin-bottom: 7px;">
+		Remedy your inner-critic and tell more honest and compassionate stories about yourself and others.
 		</p>
+		<p style="margin-left: 20px;margin-right:17px;font-size: 13.4px;line-height: 1.5;margin-bottom: 7px;">
+		Re-integrate parts of you tucked away out of fear, shame, or insecurity, mediate between the parts of you at odds with each other, and evermore deeply realize your innate wholeness. 
+		</p>
+		
+		
             <p style="margin-left: 20px;margin-right:17px;font-size: 13.4px;line-height: 1.5;margin-bottom: 7px;">
-              Have fun, let loose, and give full expression to your creativity and quirky eccentricities — all while staying grounded, disciplined, and showing up for responsibilities. 
+              Have fun, let loose, and give full expression to your creativity and quirky eccentricities — all while staying grounded and showing up responsibly for the rest of life. 
             </p>
+            
+        
+            <p style="margin-left: 20px;margin-right:17px;font-size: 13.4px;line-height: 1.5;margin-bottom: 7px;">
+		Maintain a regulated nervous system, stay physically fit, cultivate the mind via the breath, develop a deeper relationship with your bodily intuition and emotions, 
+		</p>
+		
 		
 		<p style="margin-left: 20px;margin-right:17px;font-size: 13.4px;line-height: 1.5;margin-bottom: 7px;">
-		Re-integrate parts of you driven into exile, mediate between the parts of you at odds with each other, and realize your innate wholeness. 
-		</p>
-		<p style="margin-left: 20px;margin-right:17px;font-size: 13.4px;line-height: 1.5;margin-bottom: 7px;">
-		Learn how to advocate for your emotional needs, improve family relations, set and maintain boundaries, repair strained relationships, release 
-		to respectfully say ‘No’ to anything you are not a ‘Hell Yes’ to, advocate for your emotional needs in a relationship, let go of relationships 
+		    Tend to each of your relationships [family, friends, coworkers, partners], foster healthier communication, give and receive feedback skillfully, reclaim disowned anger and wield it cleanly, set and uphold boundaries, and resolve obstacles to intimacy.
+		    </P>
+		    
+		    
+		    <p style="margin-left: 20px;margin-right:17px;font-size: 13.4px;line-height: 1.5;margin-bottom: 7px;">
+		    Recognize the many forms of manipulation, navigate out of relationships where it is strongly present, clear out the unhealthy psychological residue from the relationship, find forgiveness, forgo victimhood, and return to an even deeper self-trust and sovereignty. 
+
 		</p>
 		<p style="margin-left: 20px;margin-right:17px;font-size: 13.4px;line-height: 1.5;margin-bottom: 20px;">
-		Cultivate qualities of heart and mind that yield a richer experience of life: gratitude, forgiveness, compassion, focus, 
-		</p>
 
+		</p>
+	
 		<p>
-		    Two Disclaimers:
+		A common orientation to self-development is to ‘change who I am’ in ways that are subtly violent to the self. That’s not what this is about … you are not broken, and I'm not here to fix you. Deep wisdom lies within you — let's discover it together. 
 		</p>
-		<p style="margin-left: 20px;margin-right:17px;font-size: 13.4px;line-height: 1.5;margin-bottom: 7px;">
-		A common orientation to self-development is to ‘change who we are’ in ways that are violent to the self. That’s not what this is about … you are not broken, and I'm not here to fix you.
-		</p>
-		<p style="margin-left: 20px;margin-right:17px;font-size: 13.4px;line-height: 1.5;margin-bottom: 7px;">
-		I’m still learning each of these for myself — some more developed than others — and will thus be imperfect in my guidance. Consider me your clumsy comrade on the path, not your infallible guru. Nor am I a therapist, so if specialized trauma treatment is what you’re seeking, I'm not your guy.
-		</p>
+		
 		<p>
 		
 		</p>
@@ -457,7 +612,10 @@
         <div class="two-column">
           <div>
             <p>
-              One hour of exploring what’s most alive for you, together. Within that
+              One hour of my undivided attention. </p>
+              
+              <p>
+                  Within that
               hour, either you set the agenda, we figure it out together, or I take the lead based on what I sense would serve.
             </p>
 
@@ -466,26 +624,17 @@
               goals, with regular check-ins and guided meditations to keep momentum.
             </p>
             <p>
-              I can witness you without judgment as you navigate difficult emotions and speak to
-              life’s challenges, offering gentle reflections, reframes, nudges, and —
+              You can navigate difficult emotions and speak to
+              life’s challenges while I offer gentle reflections, reframes, nudges, and —
               only rarely and with consent — advice.
             </p>
 
             <p>
-              I’ve discovered that play is often half the medicine. So if what’s
+              I’ve discovered that play is often half the medicine, so if what’s
               needed is to bop around our rooms and babble like banshees, or launch
               into a howling recital of Bohemian Rhapsody … I’m here for it.
             </p>
-            <p>
-              We can explore such themes as: 
-            </p>
-            <p style="margin-left: 20px;margin-right:17px;font-size: 13.4px;line-height: 1.5;margin-bottom: 7px;">
-                embodiment,&ensp;boundaries,&ensp;control vs.
-              surrender,&ensp;masculine–feminine dynamics,&ensp;making wise commitments,&ensp;giving
-              and receiving feedback skillfully,&ensp;reclaiming anger and wielding it
-              cleanly,&ensp;victimhood & self-responsibility,&ensp;how to navigate manipulative relationships,&ensp;nervous system
-              regulation,&ensp;and using the breath to cultivate the mind
-            </p>
+
           </div>
         </div>
       </section>
@@ -513,19 +662,19 @@
             </p>
             <p>Whatever you offer enables me to live a simple life and:</p>
 
-                 <p style="margin-left: 20px;margin-right:17px;font-size: 13.4px;line-height: 1.5;margin-bottom: 7px;">
+                 <p style="margin-left: 20px;margin-right:17px;font-size: 13.4px;line-height: 1;margin-bottom: 7px;">
                 <span style="margin-right:5px;">∿</span> Freely coach others
             </p>
-            <p style="margin-left: 20px;margin-right:17px;font-size: 13.4px;line-height: 1.5;margin-bottom: 7px;">
+            <p style="margin-left: 20px;margin-right:17px;font-size: 13.4px;line-height: 1;margin-bottom: 7px;">
                 <span style="margin-right:5px;">∿</span>  Write with more regularity
             </p>
-            <p style="margin-left: 20px;margin-right:17px;font-size: 13.4px;line-height: 1.5;margin-bottom: 7px;">
+            <p style="margin-left: 20px;margin-right:17px;font-size: 13.4px;line-height: 1;margin-bottom: 7px;">
                 <span style="margin-right:5px;">∿</span> Support altruistic projects
             </p>
-            <p style="margin-left: 20px;margin-right:17px;font-size: 13.4px;line-height: 1.5;margin-bottom: 7px;">
+            <p style="margin-left: 20px;margin-right:17px;font-size: 13.4px;line-height: 1;margin-bottom: 7px;">
                 <span style="margin-right:5px;">∿</span>  Show up for my troubled country
             </p>
-            <p style="margin-left: 20px;margin-right:17px;font-size: 13.4px;line-height: 1.5;margin-bottom: 7px;">
+            <p style="margin-left: 20px;margin-right:17px;font-size: 13.4px;line-height: 1;margin-bottom: 7px;">
                 <span style="margin-right:5px;">∿</span>  And dance on the weekend with friends
             </p>
 
@@ -575,10 +724,124 @@
           </div>
         </div>
       </section>
+      
+      
+      
+      
+            <!-- CONTACT -->
+      <section id="contact" class="block" aria-labelledby="contact-heading">
+        <h3 id="contact-heading">Begin the conversation</h3>
+        <p class="section-kicker">A simple, honest message is enough.</p>
+        <div class="contact-grid">
+          <div>
+            <p>
+              Share a few lines about where you’re at, what you’re longing for, and
+              any questions you have. I’ll respond with next steps and a way to
+              schedule.
+            </p>
+
+            <!-- INQUIRY FORM -->
+            <form
+              class="contact-form"
+              action="https://formspree.io/f/xkgdbben"
+              method="POST"
+            >
+                
+            <div id="thank-you-inline" style="display:none; margin-top:14px; padding:14px; border-left:3px solid var(--accent); background:#fdf8ef; border-radius:9px;">
+             <p style="font-size:15px; line-height:1.6;">
+                   Thank you — your message has been sent. I’ll get back to you soon.
+             </p>
+            </div>
+            
+            
+            
+              <p class="contact-form-note">
+                Prefer not to email directly? You can also use this form:
+              </p>
+
+              <label for="name">
+                Name
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  autocomplete="name"
+                />
+              </label>
+
+              <label for="email">
+                Email
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  autocomplete="email"
+                />
+              </label>
+
+              <label for="message">
+                A few lines about you and what you’re looking for
+                <textarea
+                  id="message"
+                  name="message"
+                  required
+                  placeholder="For example: where you’re at, what you’re longing for, and any questions you have."
+                ></textarea>
+              </label>
+
+              <!-- Optional: set a subject line that will appear in your inbox -->
+              <input
+                type="hidden"
+                name="_subject"
+                value="New coaching inquiry from website"
+              />
+
+              <!-- Optional: honeypot field to reduce spam -->
+              <input type="text" name="_gotcha" style="display:none" />
+
+              <button type="submit">Send inquiry</button>
+            </form>
+          </div>
+
+          
+        </div>
+      </section>
+
+      
+      
+      
+      <section style="text-align:center; margin-left:60px; margin-right:60px; margin-top:30px; margin-bottom:30px;" >
+        <h3 style="margin-bottom:9px;" id="disclaimers-heading">Disclaimers</h3>
+      
+        
+        <p style="font-size: 14px; line-height: 1.5">
+		All are welcome to inquire, regardless of political affiliation, sexual orientation, gender, or race.
+		</p>
+		
+		
+				<p style="font-size: 14px; line-height: 1.5">
+		
+		These calls are not intended to replace therapy or specialized trauma treatment.
+		
+		</p>
+       
+        
+        <p style="font-size: 14px; line-height: 1.5">
+		I’m still growing and will thus be imperfect in my guidance. I'm a coach, not an infallible guru. Your feedback is always welcome and encouraged.
+		</p>
+		
+
+		
+
+      </section>
+      
+      
 
       <!-- FOOTER -->
       <footer>
-        © 2025 Kyle Hubbard • This life we live is a miraculous gift.
+        © 2025 Kyle Hubbard
       </footer>
     </main>
   </div>
