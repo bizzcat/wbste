@@ -188,11 +188,11 @@ Mabe have a section for life coaching and another for meditation coaching, if no
     .hero-list {
       font-size: 17px;
       color: var(--text-muted);
-      margin-left: 0px;
+      margin-left: 24px;
     }
 
     .hero-list-item {
-      margin: 6px 0;
+      margin: 4px 0;
     }
 
     .hero-list-item span {
@@ -421,6 +421,21 @@ Mabe have a section for life coaching and another for meditation coaching, if no
       transform: translateY(1px);
     }
 
+
+
+
+
+.slider-tier {
+  margin-top: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #673b57;
+  font-family: "Cormorant Garamond", serif;
+  letter-spacing: 0.01em;
+}
+
+
+
     
     
   </style>
@@ -463,6 +478,62 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const slider = document.getElementById("donation-slider");
+  const valueEl = document.getElementById("slider-value");
+  const commentEl = document.getElementById("slider-comment");
+
+  const tiers = [
+    {
+      amount: 40,
+      message: "Sample text for now! You broke and strugglin'!"
+    },
+    {
+      amount: 90,
+      message: "Sample text for now! You have a stable working class job and doing aight'!"
+    },
+    {
+      amount: 150,
+      message: "Sample text for now! You have a stable good paying job and doing good'!"
+    },
+    {
+      amount: 250,
+      message: "Sample text for now! You got money in the bank, make 150k+ a month'!"
+    }
+  ];
+
+  function updateSliderDisplay() {
+    const current = Number(slider.value);
+    valueEl.textContent = "$" + current;
+
+    // Find nearest tier
+    let closest = tiers[0];
+    let minDiff = Math.abs(current - tiers[0].amount);
+
+    for (let i = 1; i < tiers.length; i++) {
+      const diff = Math.abs(current - tiers[i].amount);
+      if (diff < minDiff) {
+        minDiff = diff;
+        closest = tiers[i];
+      }
+    }
+
+    commentEl.textContent = closest.message;
+  }
+
+  slider.addEventListener("input", updateSliderDisplay);
+  updateSliderDisplay();
+});
+</script>
+
+
+
+
+
+
+
 <body>
   <div class="page-frame">
     <main class="card">
@@ -485,7 +556,7 @@ document.addEventListener("DOMContentLoaded", function () {
       <!-- HERO -->
       <section class="hero" aria-labelledby="hero-heading">
         <div class="hero-inner">
-          <div style="text-align:center;" class="hero-text">
+          <div class="hero-text">
               
 
             <p class="hero-subtitle">
@@ -495,19 +566,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
             <div class="hero-list">
               <div class="hero-list-item">
-                <span></span> beginner mindfulness
+                <span>∿</span> beginner mindfulness
               </div>
               <div class="hero-list-item">
-                <span></span> advanced meditation
+                <span>∿</span> advanced meditation
               </div>
               <div class="hero-list-item">
-                <span></span> emotional &amp; physical wellbeing
+                <span>∿</span> emotional &amp; physical wellbeing
               </div>
               <div class="hero-list-item">
-                <span></span> intimacy &amp; relationships
+                <span>∿</span> intimacy &amp; relationships
               </div>
               <div class="hero-list-item">
-                <span></span> responsible, ethical living
+                <span>∿</span> responsible, ethical living
               </div>
             </div>
           </div>
@@ -606,40 +677,7 @@ document.addEventListener("DOMContentLoaded", function () {
           </div></div>
  </section>
  
- 
- 
- 
- 
- 
-       <!-- ABOUT -->
-      <section id="about" class="block" aria-labelledby="about-heading">
-        <h3 id="about-heading">My training</h3>
-        <p class="section-kicker">
-          
-        </p>
-        <div class="two-column">
-          <div>
-            <p>
-              For the last six years, I’ve been full-time devoted to training in
-              spiritual, therapeutic, and relational practices.
-            </p>
-            <p>
-              Four of those years were spent living in multiple Buddhist
-              monasteries — a year and a half of which on silent meditation
-              retreat, under the steady guidance of skilled teachers.
-            </p>
-            <p>
-              Another central practice has been <a class="thin-underline" style="color: #673b57" href="https://www.artemzen.com/what-is-circling/"><em>Circling</em></a>, which cultivates trust and intimacy in relationships, helps one navigate charged moments with steadiness, and invites a way of living that is more truthful, courageous, and natural.
-            </p>
 
-
-            <p>
-              I’ve received more than I can ever recount from teachers, monasteries, friends, foundations, and a loving and loyal family along this journey.   This coaching practice is one way of paying that forward: sharing
-              everything I’ve learned with anyone who feels they might benefit, with a focus on affordability.
-            </p>
-          </div>
-        </div>
-      </section>
 
  
  
@@ -681,6 +719,41 @@ document.addEventListener("DOMContentLoaded", function () {
       </section>
 
 
+
+ 
+ 
+ 
+ 
+ 
+       <!-- ABOUT -->
+      <section id="about" class="block" aria-labelledby="about-heading">
+        <h3 id="about-heading">My training</h3>
+        <p class="section-kicker">
+          
+        </p>
+        <div class="two-column">
+          <div>
+            <p>
+              For the last six years, I’ve been full-time devoted to training in
+              spiritual, therapeutic, and relational practices.
+            </p>
+            <p>
+              Four of those years were spent living in multiple Buddhist
+              monasteries — a year and a half of which on silent meditation
+              retreat, under the steady guidance of skilled teachers.
+            </p>
+            <p>
+              Another central practice has been <a class="thin-underline" style="color: #673b57" href="https://www.artemzen.com/what-is-circling/"><em>Circling</em></a>, which cultivates trust and intimacy in relationships, helps one navigate charged moments with steadiness, and invites a way of living that is more truthful, courageous, and natural.
+            </p>
+
+
+            <p>
+              I’ve received more than I can ever recount from teachers, monasteries, friends, foundations, and a loving and loyal family along this journey.   This coaching practice is one way of paying that forward: sharing
+              everything I’ve learned with anyone who feels they might benefit, with a focus on affordability.
+            </p>
+          </div>
+        </div>
+      </section>
 
 
 
@@ -725,6 +798,41 @@ document.addEventListener("DOMContentLoaded", function () {
             <p style="margin-left: 20px;margin-right:17px;font-size: 13.4px;line-height: 1;margin-bottom: 7px;">
                 <span style="margin-right:5px;">∿</span>  And dance on the weekend with friends
             </p>
+
+
+
+<div class="slider-wrap">
+  <div class="slider-label">Play with the sliding scale</div>
+
+  <input
+    id="donation-slider"
+    type="range"
+    min="25"
+    max="300"
+    value="40"
+    step="5"
+  >
+
+  <div class="slider-scale-labels">
+    <span>$25</span>
+    <span>$300</span>
+  </div>
+
+  <div id="slider-value" class="slider-value">
+    $40
+  </div>
+
+  <!-- NEW: Tier name -->
+  <div id="slider-tier" class="slider-tier">
+    Low-income / Supported
+  </div>
+
+  <div id="slider-comment" class="slider-comment">
+    Sample text for now! You broke and strugglin'!
+  </div>
+</div>
+
+
 
             <p>
               If donation-based is uncomfortable, we can talk through that — sometimes
