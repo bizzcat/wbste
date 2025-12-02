@@ -425,14 +425,126 @@ Mabe have a section for life coaching and another for meditation coaching, if no
 
 
 
-.slider-tier {
+/* Sliding scale widget */
+.slider-wrap {
+  margin-top: 18px;
+  padding: 16px 18px 18px;
+  background: #fdf7ee;
+  border: 0.4px solid var(--frame);
+  border-radius: 14px;
+}
+
+.slider-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* container that constrains/centers the slider + labels */
+.slider-track,
+.slider-scale-labels {
+  width: 60%;
+  margin: 8px auto 0;
+}
+
+/* slider itself */
+.slider-track input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 7px;
+  border-radius: 999px;
+  background: linear-gradient(
+    to right,
+    rgba(176,103,60,0.35),
+    rgba(176,103,60,0.12)
+  );
+  outline: none;
+  cursor: pointer;
+}
+
+/* Chrome & Safari thumb */
+.slider-track input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 2px solid #fdf7ee;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.25);
+  cursor: pointer;
+}
+
+/* Firefox thumb */
+.slider-track input[type="range"]::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 2px solid #fdf7ee;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.25);
+  cursor: pointer;
+}
+
+/* Firefox track background */
+.slider-track input[type="range"]::-moz-range-track {
+  height: 7px;
+  border-radius: 999px;
+  background: linear-gradient(
+    to right,
+    rgba(176,103,60,0.35),
+    rgba(176,103,60,0.12)
+  );
+}
+
+.slider-scale-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+.slider-value {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 22px;
+  color: #673b57;
   margin-top: 10px;
+  text-align: center;
+}
+
+.slider-tier {
+  margin-top: 4px;
   font-size: 15px;
   font-weight: 600;
   color: #673b57;
   font-family: "Cormorant Garamond", serif;
   letter-spacing: 0.01em;
+  text-align: center;
 }
+
+.slider-comment {
+  margin: 10px auto 0;
+  font-size: 13px;
+  line-height: 1.5;
+  padding: 10px 12px;
+  border-radius: 9px;
+  background: var(--accent-soft);
+  color: var(--text-main);
+  max-width: 480px;
+}
+
+/* Make slider full width on small screens */
+@media (max-width: 600px) {
+  .slider-track,
+  .slider-scale-labels {
+    width: 100%;
+  }
+}
+
 
 
 
@@ -804,14 +916,16 @@ document.addEventListener("DOMContentLoaded", function () {
 <div class="slider-wrap">
   <div class="slider-label">Play with the sliding scale</div>
 
-  <input
-    id="donation-slider"
-    type="range"
-    min="25"
-    max="300"
-    value="40"
-    step="5"
-  >
+  <div class="slider-track">
+    <input
+      id="donation-slider"
+      type="range"
+      min="25"
+      max="300"
+      value="40"
+      step="5"
+    >
+  </div>
 
   <div class="slider-scale-labels">
     <span>$25</span>
@@ -822,7 +936,6 @@ document.addEventListener("DOMContentLoaded", function () {
     $40
   </div>
 
-  <!-- NEW: Tier name -->
   <div id="slider-tier" class="slider-tier">
     Low-income / Supported
   </div>
@@ -893,13 +1006,16 @@ document.addEventListener("DOMContentLoaded", function () {
             <!-- CONTACT -->
       <section id="contact" class="block" aria-labelledby="contact-heading">
         <h3 id="contact-heading">Begin the conversation</h3>
-        <p class="section-kicker">A simple, honest message is enough.</p>
+ 
         <div class="contact-grid">
           <div>
             <p>
               Share a few lines about where you’re at, what you’re longing for, and
               any questions you have. I’ll respond with next steps and a way to
               schedule.
+            </p>
+            <p>
+              You can either <a class="thin-underline" style="color: #673b57" href="mailto:kyhu@pm.me">email me directly</a>, or fill out the form below.
             </p>
 
             <!-- INQUIRY FORM -->
