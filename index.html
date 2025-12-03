@@ -1,5 +1,4 @@
 
-
 <!-- NOTES
 
 
@@ -17,7 +16,7 @@ Contact form content
 Mabe have a section for life coaching and another for meditation coaching, if not, find a way to bring meditation curriculum design into the offering sectio and out of sesion format section
 
 
---> 
+-->
 
 
 
@@ -45,8 +44,8 @@ Mabe have a section for life coaching and another for meditation coaching, if no
       --bg: #f7f1e6;
       --bg-alt: #fdf8ef;
       --frame: #e1d5c6;
-      --text-main: #5f4537;
-      --text-muted: #8d7564;
+      --text-main: #553d31;
+      --text-muted: #7f695a;
       --accent: #b0673c;
       --accent-soft: rgba(176,103,60,0.12);
       --radius-card: 18px;
@@ -210,11 +209,11 @@ Mabe have a section for life coaching and another for meditation coaching, if no
       width: 100%;
       max-width: 220px;
       height: auto;
-      border-radius: 22px;
+      border-radius: 13px;
       border: 1px solid var(--frame);
-      box-shadow: 0 14px 32px rgba(0, 0, 0, 0.18);
+      box-shadow: 0 14px 32px rgba(255, 255, 255, 1);
       object-fit: cover;
-      opacity:0.75;
+      opacity:0.71;
     }
 
     /* Sections */
@@ -261,9 +260,9 @@ Mabe have a section for life coaching and another for meditation coaching, if no
     }
 
     p {
-      font-size: 15px;
-      line-height: 1.7;
-      margin-bottom: 7px;
+      font-size: 16px;
+      line-height: 1.5;
+      margin-bottom: 12px;
     }
 
     p:last-child {
@@ -427,7 +426,8 @@ Mabe have a section for life coaching and another for meditation coaching, if no
 
 /* Sliding scale widget */
 .slider-wrap {
-  margin-top: 18px;
+  margin-top: 32px;
+  margin-bottom: 30px;
   padding: 16px 18px 18px;
   background: #fdf7ee;
   border: 0.4px solid var(--frame);
@@ -503,14 +503,14 @@ Mabe have a section for life coaching and another for meditation coaching, if no
 .slider-scale-labels {
   display: flex;
   justify-content: space-between;
-  font-size: 12px;
+  font-size: 13px;
   color: var(--text-muted);
   margin-top: 4px;
 }
 
 .slider-value {
   font-family: "Cormorant Garamond", serif;
-  font-size: 22px;
+  font-size: 23px;
   color: #673b57;
   margin-top: 10px;
   text-align: center;
@@ -518,7 +518,7 @@ Mabe have a section for life coaching and another for meditation coaching, if no
 
 .slider-tier {
   margin-top: 4px;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 600;
   color: #673b57;
   font-family: "Cormorant Garamond", serif;
@@ -528,7 +528,7 @@ Mabe have a section for life coaching and another for meditation coaching, if no
 
 .slider-comment {
   margin: 10px auto 0;
-  font-size: 13px;
+  font-size: 14.3px;
   line-height: 1.5;
   padding: 10px 12px;
   border-radius: 9px;
@@ -546,16 +546,42 @@ Mabe have a section for life coaching and another for meditation coaching, if no
 }
 
 
+
+
+
+
 .brand-logo {
   display: block;
   width: 94px;
   height: auto;
 	margin: 0 auto;
 }
+ 
+
+
+
 
     
     
   </style>
+  
+  
+  
+  
+  
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H3W6RLZWRK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-H3W6RLZWRK');
+</script>
+
+
+
+
 </head>
 
 
@@ -598,52 +624,60 @@ document.addEventListener("DOMContentLoaded", function () {
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
-  const slider = document.getElementById("donation-slider");
-  const valueEl = document.getElementById("slider-value");
+  const slider    = document.getElementById("donation-slider");
+  const valueEl   = document.getElementById("slider-value");
+  const tierEl    = document.getElementById("slider-tier");
   const commentEl = document.getElementById("slider-comment");
 
   const tiers = [
     {
       amount: 40,
+      name: "Low-income / Supported",
       message: "Sample text for now! You broke and strugglin'!"
     },
     {
       amount: 90,
+      name: "Working-class / Doing alright",
       message: "Sample text for now! You have a stable working class job and doing aight'!"
     },
     {
       amount: 150,
+      name: "Middle-class stable",
       message: "Sample text for now! You have a stable good paying job and doing good'!"
     },
     {
       amount: 250,
+      name: "High-income / Supporter",
       message: "Sample text for now! You got money in the bank, make 150k+ a month'!"
     }
   ];
 
-  function updateSliderDisplay() {
+  function updateSlider() {
     const current = Number(slider.value);
     valueEl.textContent = "$" + current;
 
-    // Find nearest tier
+    // Find the closest tier
     let closest = tiers[0];
-    let minDiff = Math.abs(current - tiers[0].amount);
+    let smallestDiff = Math.abs(current - closest.amount);
 
     for (let i = 1; i < tiers.length; i++) {
       const diff = Math.abs(current - tiers[i].amount);
-      if (diff < minDiff) {
-        minDiff = diff;
+      if (diff < smallestDiff) {
+        smallestDiff = diff;
         closest = tiers[i];
       }
     }
 
+    // Update tier name and bottom text
+    tierEl.textContent = closest.name;
     commentEl.textContent = closest.message;
   }
 
-  slider.addEventListener("input", updateSliderDisplay);
-  updateSliderDisplay();
+  slider.addEventListener("input", updateSlider);
+  updateSlider(); // initialize on page load
 });
 </script>
+
 
 
 
@@ -657,9 +691,9 @@ document.addEventListener("DOMContentLoaded", function () {
       <!-- HEADER -->
       <header>
         <div>
-          <div class="brand-title">Coaching for wholehearted living</div>
+          <div class="brand-title"> Living From a Deeper Trust </div>
           <div class="brand-subtitle">
-            1:1 sessions with Kyle 
+            Coaching with Kyle Hubbard
           </div>
         </div>
 
@@ -674,7 +708,7 @@ document.addEventListener("DOMContentLoaded", function () {
       <section class="hero" aria-labelledby="hero-heading">
         <div class="hero-inner">
           <div class="hero-text">
-              
+             
 
             <p class="hero-subtitle">
               Drawing from years in Buddhist monasteries, Circling practice, and intensive
@@ -695,7 +729,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 <span>∿</span> intimacy &amp; relationships
               </div>
               <div class="hero-list-item">
-                <span>∿</span> responsible, ethical living
+                <span>∿</span> principled, authentic living
               </div>
             </div>
           </div>
@@ -734,62 +768,65 @@ document.addEventListener("DOMContentLoaded", function () {
                  I’m here to help you: 
               </p>
 
-            <p style="margin-left: 20px;margin-right:17px;font-size: 13.4px;line-height: 1.5;margin-bottom: 7px;">
+            <p style="margin-left: 20px;margin-right:17px;font-size: 14.5px;line-height: 1.5;margin-bottom: 10px;">
                 
              Develop a deep trust in life and hone the ability to turn every aspect of it — no matter how challenging — into fuel for your own self-understanding. 
             </p>
             
+            <p style="margin-left: 20px;margin-right:17px;font-size: 14.5px;line-height: 1.5;margin-bottom: 10px;">
+                Curate a meditation curriculum based on your goals, with regular check-ins and guided meditations to keep momentum.
+            </p>
             
-            <p style="margin-left: 20px;margin-right:17px;font-size: 13.4px;line-height: 1.5;margin-bottom: 7px;">
+            
+            <p style="margin-left: 20px;margin-right:17px;font-size: 14.5px;line-height: 1.5;margin-bottom: 10px;">
 		Remedy your inner-critic and tell more honest and compassionate stories about yourself and others.
 		</p>
 		
 		
-		<p style="margin-left: 20px;margin-right:17px;font-size: 13.4px;line-height: 1.5;margin-bottom: 7px;">
+		<p style="margin-left: 20px;margin-right:17px;font-size: 14.5px;line-height: 1.5;margin-bottom: 10px;">
             Clarify your big Why for being alive, and bring your actions, circumstances, and commitments into alignment with that.
             </p>
             
             
 		
-		<p style="margin-left: 20px;margin-right:17px;font-size: 13.4px;line-height: 1.5;margin-bottom: 7px;">
+		<p style="margin-left: 20px;margin-right:17px;font-size: 14.5px;line-height: 1.5;margin-bottom: 10px;">
               Have fun, let loose, and give full expression to your creativity and quirky eccentricities — all while staying grounded and showing up responsibly for the rest of life. 
             </p>
             
             
             
             
-		<p style="margin-left: 20px;margin-right:17px;font-size: 13.4px;line-height: 1.5;margin-bottom: 7px;">
-		Re-integrate parts of you tucked away out of fear, shame, or insecurity, mediate between the parts of you at odds with each other, and evermore deeply realize your innate wholeness. 
+		<p style="margin-left: 20px;margin-right:17px;font-size: 14.5px;line-height: 1.5;margin-bottom: 10px;">
+		Re-integrate parts of you tucked away out of fear, shame, or insecurity, mediate between the parts of you at odds with each other, and evermore deeply realize your fundamental wholeness. 
 		</p>
 		
 		
             
             
         
-            <p style="margin-left: 20px;margin-right:17px;font-size: 13.4px;line-height: 1.5;margin-bottom: 7px;">
+            <p style="margin-left: 20px;margin-right:17px;font-size: 14.5px;line-height: 1.5;margin-bottom: 10px;">
 		Maintain a regulated nervous system, stay physically fit, cultivate the mind via the breath, and develop a deeper relationship with your body, intuition, and emotions.
 		</p>
 		
 		
-		<p style="margin-left: 20px;margin-right:17px;font-size: 13.4px;line-height: 1.5;margin-bottom: 7px;">
-		    Tend to each of your relationships [family, friends, coworkers, partners], foster healthier communication, give and receive feedback skillfully, reclaim disowned anger and wield it cleanly, set and maintain boundaries, and resolve obstacles to intimacy.
+		<p style="margin-left: 20px;margin-right:17px;font-size: 14.5px;line-height: 1.5;margin-bottom: 10px;">
+		    Wisely tend to each of your relationships, give and receive feedback skillfully, reclaim disowned anger and wield it cleanly, resolve obstacles to trust and intimacy, and foster healthier communication generally.
 		    </P>
 		    
 		    
-		    <p style="margin-left: 20px;margin-right:17px;font-size: 13.4px;line-height: 1.5;margin-bottom: 7px;">
-		    Recognize the many forms of manipulation, navigate out of relationships where it is strongly present, clear out the unhealthy psychological residue from the relationship, find forgiveness, forgo victimhood, and move onward with an even deeper self-trust and sovereignty. 
+		    <p style="margin-left: 20px;margin-right:17px;font-size: 14.5px;line-height: 1.5;margin-bottom: 15px;">
+		    Recognize the many forms of manipulation, navigate out of relational contexts where it is strongly present, clear out the unhealthy psychological residue picked up therein, find forgiveness, forgo victimhood, and move onward with an even deeper self-trust and sovereignty.
+
 
 		</p>
-		<p style="margin-left: 20px;margin-right:17px;font-size: 13.4px;line-height: 1.5;margin-bottom: 20px;">
 
-		</p>
 	
 		<p>
-		A common orientation to self-development is to ‘change who I am’ in ways that are subtly violent to the self. That’s not what this is about … you are not broken, and I'm not here to fix you. Deep wisdom lies within you — let's discover it together. 
+            A common orientation to self-development is to ‘change who I am’ in ways that are subtly violent to the self. That’s not what this is about … you are not broken, and I'm not here to fix you. It’s often by settling into exactly who we are that the real magic happens.  
 		</p>
 		
 		<p>
-		
+		I’ve discovered that play is often half the medicine, so if what’s needed during a session is to bop around our rooms and babble like banshees, or launch into a howling recital of Bohemian Rhapsody … I’m here for it.
 		</p>
           </div></div>
  </section>
@@ -803,33 +840,20 @@ document.addEventListener("DOMContentLoaded", function () {
  
       <!-- SESSIONS -->
       <section id="sessions" class="block" aria-labelledby="sessions-heading">
-        <h3 id="sessions-heading">Session format</h3>
+        <h3 id="sessions-heading">Session formats</h3>
 
         <div class="two-column">
           <div>
-            <p>
-              One hour of my undivided attention. </p>
-              
-              <p>
-                  Within that
-              hour, either you set the agenda, we figure it out together, or I take the lead based on what I sense would serve.
-            </p>
 
+            
             <p>
-              We might curate a meditation curriculum based on your
-              goals, with regular check-ins and guided meditations to keep momentum.
+                Regularly scheduled sessions at any interval for sustained progress on your path. Ideally 2-4 sessions per month, but could be more, or less. 
             </p>
-            <p>
-              You can navigate difficult emotions and speak to
-              life’s challenges while I offer gentle reflections, reframes, nudges, and —
-              only rarely and with consent — advice.
+            
+                        <p>
+                Ad-hoc single sessions where you’re navigating difficult emotional terrain, seeking counsel on a challenge or critical decision, or simply wanting to explore the present moment together, Circling style. 
             </p>
-
-            <p>
-              I’ve discovered that play is often half the medicine, so if what’s
-              needed is to bop around our rooms and babble like banshees, or launch
-              into a howling recital of Bohemian Rhapsody … I’m here for it.
-            </p>
+            
 
           </div>
         </div>
@@ -866,7 +890,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             <p>
               I’ve received more than I can ever recount from teachers, monasteries, friends, foundations, and a loving and loyal family along this journey.   This coaching practice is one way of paying that forward: sharing
-              everything I’ve learned with anyone who feels they might benefit, with a focus on affordability.
+              everything I’ve learned with anyone who feels they might benefit.
             </p>
           </div>
         </div>
@@ -880,130 +904,80 @@ document.addEventListener("DOMContentLoaded", function () {
       <!-- PRICING -->
       <section id="pricing" class="block" aria-labelledby="pricing-heading">
         <h3 id="pricing-heading">Donation-based pricing</h3>
-        <p class="section-kicker">
-          Generosity at the center — not as an afterthought.
-        </p>
-        <div class="two-column">
-          <div>
+
+            
+            
             <p>
-              While I consider myself supremely lucky, I know it’s not just luck that allowed me to train as deeply as I have. Sure — ingenuity, effort, and unearned privilege were a part of it, but the single greatest enabling factor has been <em>generosity</em>.
+            By donation does not mean ‘free’ or ‘take without giving.’ It means generosity: my gifts are freely given, and you are invited to offer what you discern is most reasonable given your means, the benefit you receive, and your own relationship to giving. 
             </p>
+            
             <p>
-              While the market suggests I could charge a few hundred dollars per
-              session, I’m offering them instead <strong>by donation</strong> to
-              anyone who feels they might benefit.
+            This is on the honor system — no proof-of-income required. 
             </p>
+            
             <p>
-              This means that after our session you could send me a single dollar and
-              I would rejoice. Truly — you could send me $500 and I wouldn’t hold a
-              single grudge against you.
+            Whatever you offer enables me to live a simple life and freely coach others, write with more regularity, support altruistic projects, show up for my troubled country, and dance on the weekend with friends. I choose this model because I want support to be accessible, and giving to feel voluntary and meaningful.
             </p>
-            <p>Whatever you offer enables me to live a simple life and:</p>
-
-                 <p style="margin-left: 20px;margin-right:17px;font-size: 13.4px;line-height: 1;margin-bottom: 7px;">
-                <span style="margin-right:5px;">∿</span> Freely coach others
-            </p>
-            <p style="margin-left: 20px;margin-right:17px;font-size: 13.4px;line-height: 1;margin-bottom: 7px;">
-                <span style="margin-right:5px;">∿</span>  Write with more regularity
-            </p>
-            <p style="margin-left: 20px;margin-right:17px;font-size: 13.4px;line-height: 1;margin-bottom: 7px;">
-                <span style="margin-right:5px;">∿</span> Support altruistic projects
-            </p>
-            <p style="margin-left: 20px;margin-right:17px;font-size: 13.4px;line-height: 1;margin-bottom: 7px;">
-                <span style="margin-right:5px;">∿</span>  Show up for my troubled country
-            </p>
-            <p style="margin-left: 20px;margin-right:17px;font-size: 13.4px;line-height: 1;margin-bottom: 7px;">
-                <span style="margin-right:5px;">∿</span>  And dance on the weekend with friends
-            </p>
-
-
-
-<div class="slider-wrap">
-  <div class="slider-label">Play with the sliding scale</div>
-
-  <div class="slider-track">
-    <input
-      id="donation-slider"
-      type="range"
-      min="25"
-      max="300"
-      value="40"
-      step="5"
-    >
-  </div>
-
-  <div class="slider-scale-labels">
-    <span>$25</span>
-    <span>$300</span>
-  </div>
-
-  <div id="slider-value" class="slider-value">
-    $40
-  </div>
-
-  <div id="slider-tier" class="slider-tier">
-    Low-income / Supported
-  </div>
-
-  <div id="slider-comment" class="slider-comment">
-    Sample text for now! You broke and strugglin'!
-  </div>
-</div>
-
-
-
+            
             <p>
-              If donation-based is uncomfortable, we can talk through that — sometimes
-              money brings up a lot of material, and that’s welcome here.
+            Many coaches observe that those who invest more money engage more deeply when they invest more, but that’s an observation, not a requirement. You might discern that $1 is the right amount and I would rejoice. Truly — you could send me $500 and I wouldn’t hold a single grudge against you. Let your integrity be the guide.
             </p>
+            
             <p>
-              Or we can simply set a <strong>fixed fee</strong> together that feels
-              clear and workable for both of us.
+            If the donation model is uncomfortable or unclear, I’m happy to assist you in finding a number that feels good and true.
             </p>
-            <p style="color: var(--text-muted);">
-              My hope is that this structure allows people with less access to
-              resources to still receive support, while those with more can help
-              sustain the work for others.
-            </p>
-          </div>
-        </div>
-      </section>
-
-
-
-
-
-
-
-      <!-- CONTACT -->
-      <section id="contact" class="block" aria-labelledby="contact-heading">
-        <h3 id="contact-heading">Begin the conversation</h3>
-        <p class="section-kicker">A simple, honest message is enough.</p>
-        <div class="contact-grid">
-          <div>
-
+            
             <p>
-              Share a few lines about where you’re at, what you’re longing for, and
-              any questions you have. I’ll respond with next steps and a way to
-              schedule.
+            The sliding scale below is simply a reference point — explore it to get a sense of what’s typical across different financial circumstances. 
             </p>
-          </div>
-          <div>
-            <div class="contact-details">
-              <div class="contact-details-title">Email</div>
-              <div style="color: #673b57;"><a href="mailto:kyhu@pm.me">kyhu@pm.me</a></div>
 
 
 
-              <div class="contact-details-title">Format</div>
-              <div>Online sessions (video or audio)</div>
-
-              <div class="contact-details-title">Accessibility</div>
-              <div style="flex:1 1 260px;min-width:0;max-width:200px">All are welcome to inquire, regardless of political affiliation, sexual orientation, gender, or race.</div>
+            <div class="slider-wrap">
+              <div class="slider-label">    </div>
+            
+              <div class="slider-track">
+                <input
+                  id="donation-slider"
+                  type="range"
+                  min="25"
+                  max="300"
+                  value="40"
+                  step="5"
+                >
+              </div>
+            
+              <div class="slider-scale-labels">
+                <span>$25</span>
+                <span>$300</span>
+              </div>
+            
+              <div id="slider-value" class="slider-value">
+                $40
+              </div>
+            
+              <div id="slider-tier" class="slider-tier">
+                Low-income / Supported
+              </div>
+            
+              <div id="slider-comment" class="slider-comment">
+                Sample text for now! You broke and strugglin'!
+              </div>
             </div>
-          </div>
-        </div>
-      </section>
+
+
+
+            <p style="color: var(--text-muted);">
+              My hope is that this structure allows people with fewer resources to still receive support, while those with more can help sustain the work for others.
+            </p>
+          
+  
+</section>
+
+
+
+
+
       
       
       
@@ -1101,7 +1075,7 @@ document.addEventListener("DOMContentLoaded", function () {
       
       <!-- DISCLAIMER -->
       
-      <section style="text-align:center; margin-left:60px; margin-right:60px; margin-top:30px; margin-bottom:30px;" >
+      <section style="text-align:center; margin-left:10%; margin-right:10%; margin-top:30px; margin-bottom:30px;" >
         <h3 style="margin-bottom:9px;" id="disclaimers-heading"></h3>
       
         
@@ -1126,7 +1100,8 @@ document.addEventListener("DOMContentLoaded", function () {
 		</p>
 		
 
-		<img src="logo.svg" class="brand-logo">
+<img src="logo.svg" class="brand-logo">
+
 
       </section>
       
@@ -1134,7 +1109,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       <!-- FOOTER -->
       <footer>
-        © 2025 Kyle Hubbard
+
       </footer>
     </main>
   </div>
