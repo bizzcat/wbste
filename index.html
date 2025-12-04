@@ -2,33 +2,6 @@
 
 
 
-<!-- NOTES
-
-
-
-Dana: sliding scale, 4 examples, depending on income.
-Prices subject to increase with time. 
-
-
-Coaching format: I'm available for one-off calls on an ad-hoc basis, or developing a deeper connection with meetings at a regular interval. 
-
-
-Contact form content
-
-
-Mabe have a section for life coaching and another for meditation coaching, if not, find a way to bring meditation curriculum design into the offering sectio and out of sesion format section
-
-
--->
-
-
-
-
-
-
-
-
-
 
 
 <!DOCTYPE html>
@@ -588,6 +561,78 @@ ul {
 }
 
 
+
+
+
+
+
+
+/* Accordions */
+.accordion {
+  /* just reusing section.block styles; the class is for JS/CSS hooks */
+  position: relative;
+}
+
+.accordion-header {
+  width: 100%;
+  padding: 0;
+  margin: 0 0 6px 0;
+  background: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.accordion-title {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 24px;
+  color: #673b57;
+  text-align: left;
+}
+
+.accordion-icon {
+  font-size: 18px;
+  color: var(--text-muted);
+  margin-left: 12px;
+  transition: transform 0.2s ease;
+}
+
+.accordion-panel {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.25s ease;
+}
+
+/* when open */
+.accordion.accordion-open .accordion-panel {
+  max-height: 2000px; /* large enough to fit content */
+}
+
+.accordion.accordion-open .accordion-icon {
+  transform: rotate(90deg);
+}
+
+/* On larger screens, keep everything open by default and disable accordion behavior */
+@media (min-width: 760px) {
+  .accordion-header {
+    cursor: default;
+  }
+
+  .accordion-icon {
+    display: none;
+  }
+
+  .accordion-panel {
+    max-height: none;
+    overflow: visible;
+  }
+}
+
+
+
+
     
     
   </style>
@@ -707,7 +752,29 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const accordionHeaders = document.querySelectorAll(".accordion-header");
 
+  accordionHeaders.forEach((btn) => {
+    btn.addEventListener("click", function () {
+      // On desktop, do nothing (CSS makes it open anyway)
+      if (window.matchMedia("(min-width: 760px)").matches) return;
+
+      const section = btn.closest(".accordion");
+      const isOpen = section.classList.toggle("accordion-open");
+      btn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    });
+  });
+
+  // Optionally: open all accordions by default on desktop
+  if (window.matchMedia("(min-width: 760px)").matches) {
+    document.querySelectorAll(".accordion").forEach((sec) => {
+      sec.classList.add("accordion-open");
+    });
+  }
+});
+</script>
 
 
 
@@ -785,64 +852,60 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 <!-- Offering -->
-      <section class="block">
-        <h3>The offering</h3>
-        <p class="section-kicker">
+<!-- Offering -->
+<section class="block accordion">
+  <button class="accordion-header" aria-expanded="false">
+    <span class="accordion-title">The offering</span>
+    <span class="accordion-icon">▸</span>
+  </button>
+
+  <div class="accordion-panel">
+    <p class="section-kicker"></p>
+
+    <div class="two-column">
+      <div>
+        <p style="margin-top:5px;margin-bottom:13px;">
+           I’m here to help you: 
         </p>
-        <div class="two-column">
-          <div>
-              <p style="margin-top:5px;margin-bottom:13px;">
-                 I’m here to help you: 
-              </p>
-              
-              
-              <ul>
-                  <li>
-                      Develop a deep trust in life and hone the ability to turn every aspect of it — no matter how challenging — into fuel for your own development and self-understanding.
-                  </li>
-                  
-                  <li>
-                      Curate a meditation curriculum based on your goals, with regular check-ins and guided meditations to keep momentum.
-                  </li>
-                  
-                  <li>
-                      Remedy your inner-critic and tell more honest and compassionate stories about yourself and others.
-                  </li>
-                  
-                  <li>
-                      Re-integrate parts of you tucked away out of fear, shame, or insecurity, mediate between the parts of you at odds with each other, and evermore deeply realize internal harmony. 
-                  </li>
-                  
-                  <li>
-                      Maintain a regulated nervous system, stay physically fit, cultivate the mind via the breath, and develop a deeper relationship with your body, intuition, and emotions.
-                  </li>
-                  
-                  <li>
-                      Wisely tend to each of your relationships, give and receive feedback skillfully, reclaim disowned anger and wield it cleanly, resolve obstacles to trust and intimacy, and foster healthier communication generally.
-                  </li>
-                  
-                  <li>
-                      Recognize the many forms of manipulation, navigate out of relationships where it is strongly present, clear out the unhealthy psychological residue picked up therein, find forgiveness, forgo victimhood, and move onward with renewed self-trust and sovereignty.
-                  </li>
-                  
-                  <li>
-                      Have fun, let loose, and give full expression to your creativity and quirky eccentricities — all while staying grounded and showing up responsibly for the rest of life. 
-                  </li>
 
-                  
-              </ul>
+        <ul>
+          <li>
+            Develop a deep trust in life and hone the ability to turn every aspect of it — no matter how challenging — into fuel for your own development and self-understanding.
+          </li>
+          <li>
+            Curate a meditation curriculum based on your goals, with regular check-ins and guided meditations to keep momentum.
+          </li>
+          <li>
+            Remedy your inner-critic and tell more honest and compassionate stories about yourself and others.
+          </li>
+          <li>
+            Re-integrate parts of you tucked away out of fear, shame, or insecurity, mediate between the parts of you at odds with each other, and evermore deeply realize internal harmony. 
+          </li>
+          <li>
+            Maintain a regulated nervous system, stay physically fit, cultivate the mind via the breath, and develop a deeper relationship with your body, intuition, and emotions.
+          </li>
+          <li>
+            Wisely tend to each of your relationships, give and receive feedback skillfully, reclaim disowned anger and wield it cleanly, resolve obstacles to trust and intimacy, and foster healthier communication generally.
+          </li>
+          <li>
+            Recognize the many forms of manipulation, navigate out of relationships where it is strongly present, clear out the unhealthy psychological residue picked up therein, find forgiveness, forgo victimhood, and move onward with renewed self-trust and sovereignty.
+          </li>
+          <li>
+            Have fun, let loose, and give full expression to your creativity and quirky eccentricities — all while staying grounded and showing up responsibly for the rest of life. 
+          </li>
+        </ul>
 
+        <p>
+          A common orientation to self-development is to ‘change who I am’ in ways that are subtly violent to the self. That’s not what this is about … you are not broken, and I'm not here to fix you. It’s often by learning to settle into exactly who we are that the real magic happens.  
+        </p>
 
-	
-		<p>
-            A common orientation to self-development is to ‘change who I am’ in ways that are subtly violent to the self. That’s not what this is about … you are not broken, and I'm not here to fix you. It’s often by learning to settle into exactly who we are that the real magic happens.  
-		</p>
-		
-		<p>
-		I’ve discovered that play is often half the medicine, so if what’s needed during a session is to bop around our rooms and babble like banshees, or launch into a howling recital of Bohemian Rhapsody … I’m here for it.
-		</p>
-          </div></div>
- </section>
+        <p>
+          I’ve discovered that play is often half the medicine, so if what’s needed during a session is to bop around our rooms and babble like banshees, or launch into a howling recital of Bohemian Rhapsody … I’m here for it.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
  
 
 
